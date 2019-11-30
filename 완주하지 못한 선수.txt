@@ -1,0 +1,19 @@
+import java.util.Arrays;
+class Solution {
+    public String solution(String[] participant, String[] completion) {
+        String answer = "";
+        int i;
+        
+        Arrays.sort(participant);           //참가한 선수 정렬
+		Arrays.sort(completion);            //완주한 선수 정렬
+        
+        for(i =0; i<participant.length-1; i++){
+            if(!(participant[i].equals(completion[i]))) {    //정렬을 했기에 정렬한 것들을 비교했을때    
+                break;                                       //참가 선수와 완주 선수의 이름이 같지 않을 경우, 
+            }                                                //i 번째 참가선수는 완주 하지 못한 것이다.
+        }
+          answer=participant[i];                             //i 번째 선수를 answer 변수에 담는다.
+
+        return answer;     
+    }
+}
